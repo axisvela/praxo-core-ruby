@@ -9,7 +9,7 @@ The normative contract is [`spec/`](../../spec/README.md); Go remains the
 reference implementation.
 
 - `SPEC_VERSION`: `0.2.0`
-- Core version: `0.4.1`
+- Core version: `0.8.0`
 - Tier: core
 - License: MIT
 - Dependencies: Ruby standard library only

@@ -36,7 +36,16 @@ module Praxo
 
       def specs
         @tools.values.map do |tool|
-          Models.tool_spec(name: tool.name, description: tool.description)
+          if tool.respond_to?(:spec)
+            tool.spec
+          else
+            Models.tool_spec(
+              name: tool.name,
+              description: tool.description,
+              parameters: tool.respond_to?(:parameters) ? tool.parameters : nil,
+              risk: tool.respond_to?(:risk) ? tool.risk : nil
+            )
+          end
         end.sort_by(&:name)
       end
     end
@@ -67,7 +76,7 @@ module Praxo
                     :max_steps, :max_tokens, :tool_choice, :middleware,
                     :allowed_tools, :cancellation, :on_stream,
                     :max_parallel_tools, :interrupt_on, :on_interrupt_decision,
-                    :on_interrupt
+                    :on_interrupt, :require_policy, :require_tool_scope
 
       def initialize(model)
         @model = model
@@ -87,11 +96,21 @@ module Praxo
         @interrupt_on = []
         @on_interrupt_decision = nil
         @on_interrupt = nil
+        @require_policy = false
+        @require_tool_scope = false
       end
     end
 
     class Runner
       def initialize(options)
+        if options.require_policy && options.policy.nil?
+          Praxo.error('AGENT_INVALID_OPTIONS',
+                      'agent: require policy: policy is required')
+        end
+        if options.require_tool_scope && options.allowed_tools.empty?
+          Praxo.error('AGENT_INVALID_OPTIONS',
+                      'agent: require tool scope: allowed_tools must not be empty')
+        end
         @options = options
       end
 
