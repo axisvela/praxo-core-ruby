@@ -5,6 +5,10 @@ native Ruby Core: an agent loop with tool registration and dispatch, policy
 hooks, typed events, memory, checkpoints, context budgets, middleware, JSON
 Schema validation, and plugin manifest parsing.
 
+Use it when an existing Ruby application needs a governed model/tool loop
+without adding a sidecar in another language. It is not an HTTP user agent,
+crawler, hosted agent service, or model provider.
+
 This repository is the Ruby release source. The framework repository remains
 [`axisvela/praxo-core`](https://github.com/axisvela/praxo-core).
 
@@ -12,12 +16,12 @@ The normative contract is [`spec/`](https://github.com/axisvela/praxo-core/blob/
 Go remains the reference implementation.
 
 - `SPEC_VERSION`: `0.2.0`
-- Core version: `0.8.1`
+- Core version: `0.8.2`
 - Tier: core
 - License: MIT
 - Dependencies: Ruby standard library only
 - Ruby source repository: https://github.com/axisvela/praxo-core-ruby
-- The latest RubyGems package is `praxo-core@0.8.1`
+- The latest RubyGems package is `praxo-core@0.8.2`
 
 ## Registry and Coding-Agent Entry
 
@@ -177,5 +181,5 @@ before emitting.
 
 ## Release
 
-Tag shape: `ruby/v0.8.1`. The tag targets `SPEC_VERSION` `0.2.0`. See
+Tag shape: `ruby/v0.8.2`. The tag targets `SPEC_VERSION` `0.2.0`. See
 [CHANGELOG.md](CHANGELOG.md) for per-release changes and compatibility notes.

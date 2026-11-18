@@ -8,11 +8,11 @@
 
 - package: `praxo-core`
 - registry: [RubyGems](https://rubygems.org/gems/praxo-core/versions/0.8.1)
-- source_version: `0.8.1`
+- source_version: `0.8.2`
 - published_version: `0.8.1`
 - install_published: `gem install praxo-core`
 - install_source: `gem install praxo-core`
-- source_tag: `ruby/v0.8.1`
+- source_tag: `ruby/v0.8.2`
 - tier: Core
 - contract: `SPEC_VERSION` `0.2.0`
 - documentation: https://axisvela.github.io/praxo-core/languages/ruby/
@@ -44,8 +44,8 @@
 
 ## Boundaries
 
-- In-process framework; not a model provider, hosted service, workflow engine,
-  identity provider, or safety controller.
+- In-process framework; not an HTTP user agent, crawler, model provider, hosted
+  service, workflow engine, identity provider, or safety controller.
 - No exactly-once, sandbox-isolation, production-security, real-time, or
   physical-safety claim.
 - Registry pages are release snapshots. Verify the published version and read the
