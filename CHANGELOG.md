@@ -1,11 +1,54 @@
 # Ruby Core Release Notes
 
+
+## 0.8.1 - 2026-11-15
+
+### Changed
+
+- Expanded the registry README with a Get started section and a task-oriented example index.
+
+## 0.8.0 - 2026-11-15
+
+Source tag `ruby/v0.8.0`.
+
+### Added
+
+- Opt-in `require_policy` guard: agent construction fails with
+  `AGENT_INVALID_OPTIONS` when a policy is required but no policy hook is
+  configured.
+- Opt-in `require_tool_scope` guard: agent construction fails with
+  `AGENT_INVALID_OPTIONS` when tool scope is required but `allowed_tools` is
+  empty.
+
+## 0.7.0 - 2026-11-13
+
+Source tag `ruby/v0.7.0`.
+
+### Added
+
+- OpenTelemetry event sink (`OtelSink`) over a caller-supplied OTLP/HTTP
+  transport.
+- Local threaded subagent delegation (`Delegation::SubagentManager`).
+- Retriever seam (`Document`, `FuncRetriever`).
+
+## 0.6.0 - 2026-11-12
+
+Source tag `ruby/v0.6.0`.
+
+### Added
+
+- MCP Streamable HTTP (2025-03-26) transport and client support.
+- Native Anthropic Messages and Gemini generateContent model adapters.
+- Minimal stdio MCP client with pagination, tool calls, timeouts, and
+  cancellation notifications.
+
 ## 0.4.1 - 2026-11-04
 
-Source release tag `ruby/v0.4.1`. This is a Ruby distribution metadata release:
-the gem source repository is now `axisvela/praxo-core-ruby`, so Ruby Toolbox and
-other consumers see the Ruby-specific README instead of the monorepo Go README.
-No runtime behavior changed from `0.4.0`.
+Source release tag `ruby/v0.4.1`. RubyGems publishes `praxo-core==0.4.1`.
+This is a Ruby distribution metadata release: the gem source repository is now
+`axisvela/praxo-core-ruby`, so Ruby Toolbox and other consumers see the
+Ruby-specific README instead of the monorepo Go README. No runtime behavior
+changed from `0.4.0`.
 
 ## 0.4.0 - 2026-11-02
 
